@@ -60,16 +60,26 @@ class myController extends CI_Controller {
 		/*||*/ if ($this->form_validation->run() == TRUE){
 		/*||*/ 		if($id_data==null){	
 		/*||*/ 			$value="";
-		/*||*/ 			foreach($this->thisKolom as $kol)
-		/*||*/ 				$value=	$value."'".$this->input->post($kol['COLUMN_NAME'])."',";
+		/*||*/ 			foreach($this->thisKolom as $kol) {
+								if($this->input->post($kol['COLUMN_NAME']) != 0 && empty($this->input->post($kol['COLUMN_NAME']))) {
+									$value=	$value."NULL,";
+								} else {
+									$value=	$value."'".$this->input->post($kol['COLUMN_NAME'])."',";
+								}
+						}
 		/*||*/ 			$value=substr($value, 0, -1);	
 		/*||*/ 			$this->myModel->tambah($tabel,$value);
         /*||*/          echo '<script>alert(\'Data Telah Disimpan\')</script>';		
 		/*||*/ 		} else {
 		/*||*/			echo '<script>alert(\'Data Telah Update\')</script>';
 		/*||*/ 			$value="";
-		/*||*/ 			foreach($this->thisKolom as $kol)
-		/*||*/ 				$value=	$value.$kol['COLUMN_NAME']."='".$this->input->post($kol['COLUMN_NAME'])."',";						
+						foreach($this->thisKolom as $kol) {
+							if($this->input->post($kol['COLUMN_NAME']) != 0 && empty($this->input->post($kol['COLUMN_NAME']))) {
+								$value=	$value.$kol['COLUMN_NAME']."=NULL,";						
+							} else {
+								$value=	$value.$kol['COLUMN_NAME']."='".$this->input->post($kol['COLUMN_NAME'])."',";						
+							}
+						}
 		/*||*/			$value=substr($value, 0, -1);	
 		/*||*/			$this->myModel->ubah($tabel,$this->pk,$id_data,$value);
 		/*||*/		}
