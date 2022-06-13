@@ -24,6 +24,7 @@
 	<!--    <li><a href="<?php echo base_url();?>index.php/myController/tampil/...ISI DENGAN NAMA TABEL...."> Data ....ISI DENGAN NAMA TABEL .....  </a></li>       -->
 	<!-- ======================================================================================================================================================= -->
 			<li><a href="<?php echo base_url();?>index.php/myController/tampil/kamar"> Data Kamar</a></li>
+			<li><a href="<?php echo base_url();?>index.php/myController/tampil/pesanan"> Data Pesanan</a></li>
 			<li><a href="<?php echo base_url();?>index.php/about">About</a></li>
 			</ul>
 		</div>
