@@ -26,6 +26,7 @@
 			<li><a href="<?php echo base_url();?>index.php/myController/tampil/kamar"> Data Kamar</a></li>
 			<li><a href="<?php echo base_url();?>index.php/myController/tampil/pesanan"> Data Pesanan</a></li>
 			<li><a href="<?php echo base_url();?>index.php/myController/tampil/pembayaran"> Portal Pembayaran</a></li>
+			<li><a href="<?php echo base_url();?>index.php/myController/tampil/customer"> Customer</a></li>
 			<li><a href="<?php echo base_url();?>index.php/about">About</a></li>
 			</ul>
 		</div>
